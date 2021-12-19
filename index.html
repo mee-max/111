@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+        width: 200px;
+        height: 40px;
+        background-color: burlywood;
+        text-align: center;
+        font-weight: bold;
+        line-height: 30px;
+        cursor: pointer;
+    }
+    div{
+        width: 1400px;
+        height: 1200px;
+        background-color: #f8f8f6;
+        display: none;
+    }
+    .content{
+        display: block;
+    }
+    .tab{
+        background-color: #fafaf9;
+    }
+
+</style>
+<body>
+    <ul>
+        <li class="tab">降水量总图</li>
+        <li>温度折线图</li>
+        <li>河流图</li>
+    </ul>
+    <div class="content">
+        <iframe src="./html/main.html" frameBorder="0" width="900" scrolling="no" height="1400"></iframe>
+    </div>
+    <div id="">
+        <iframe src="./html/lineChart.html" frameBorder="0" width="900" scrolling="no" height="1400"></iframe>
+    </div>
+    <div id="">
+        <iframe src="./html/riverChart.html" frameBorder="0" width="900" scrolling="no" height="1400"></iframe>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //给每个li绑定鼠标单击事件,单击的时候修改li和div的class的值
+    var lis = document.getElementsByTagName('li');
+    var divs = document.getElementsByTagName('div');
+    for (var i=0;i<lis.length;i++) {
+        lis[i].a = i;//为每个li添加一个属性，这个属性表示li的下标
+        lis[i].onclick = function(){
+            //alert(this.a);
+            for (var j=0;j<lis.length;j++) {
+                //当前点击的li的下标是this.a
+                if(j == this.a){
+                    lis[j].className = 'tab';
+                    divs[j].className = 'content'
+                }
+                else{
+                    lis[j].className = '';
+                    divs[j].className = ''
+                }
+            }
+        };
+    }
+</script>

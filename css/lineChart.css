@@ -1,0 +1,21 @@
+.box{
+    margin: 5% auto;
+    width: 600px;
+    height: 400px;
+    background-color: #ddd;
+}
+
+body {
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.axisText{
+    font-size: 15px;
+}
+
+.title{
+    font-size: 20px;
+}
